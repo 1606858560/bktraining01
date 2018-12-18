@@ -1,0 +1,34 @@
+import java.util.Arrays;
+
+public class ArrayAdd1 {
+	public static void main(String args[]) {
+
+//		int[] arr = new int[]{1,2,3,4,5};
+		int[] arr = new int[5];
+		arr[0]=1+6;
+		arr[1]=2+6;
+		arr[2]=3;
+		arr[3]=4;
+		arr[4]=5;
+		
+		for (int num : arr) {
+            num = num + 6;
+            System.out.println(num);
+        }
+	
+		for(int arr1=1; arr1<3; arr1++) {
+			arr = arr + 6;
+			System.out.println(arr1);
+		}
+		
+		int i = 0;
+		while (i < arr.length) {
+			System.out.println(arr[i]);
+			i++;
+		}
+		System.out.println("");
+		System.out.println("");
+		//System.out.println(Arrays.toString(arr));	
+	}
+	
+}

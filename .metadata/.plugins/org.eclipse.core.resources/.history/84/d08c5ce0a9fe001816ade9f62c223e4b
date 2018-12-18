@@ -1,0 +1,5 @@
+
+public class StringName {
+	String name = new String;
+	name=Anissa;
+}

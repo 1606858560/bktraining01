@@ -1,0 +1,8 @@
+
+public class StringName {
+	public static void main(String args[]) {
+
+		String Anissa;
+		System.out.println(Anissa);
+	}
+}

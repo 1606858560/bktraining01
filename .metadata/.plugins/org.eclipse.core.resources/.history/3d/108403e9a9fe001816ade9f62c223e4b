@@ -1,0 +1,10 @@
+
+public class StringName {
+	private static final char[] String = Anissa;
+
+	public static void main(String args[]) {
+
+		String Anissa;
+		System.out.println(String);
+	}
+}

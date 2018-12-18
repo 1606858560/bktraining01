@@ -1,0 +1,28 @@
+package com.bk.abc;
+
+import org.apache.log4j.Logger;
+
+public class Program02 {
+final static Logger logger = Logger.getLogger(Program01.class);
+			
+	public static void main(String args[]) {
+		Program02 p02 = new Program02();
+		p02.tryLogging("Hello World");
+	}
+	
+	private void tryLogging(String myLogMessage) {
+		if(logger.isDebugEnabled()) {
+			logger.debug("DEBUG MESSAAGE: "+myLogMessage);
+			logger.debug("DEBUG MESSAAGE: "+myLogMessage);
+			logger.debug("DEBUG MESSAAGE: "+myLogMessage);
+			logger.debug("DEBUG MESSAAGE: "+myLogMessage);
+			logger.debug("DEBUG MESSAAGE: "+myLogMessage);
+			logger.debug("DEBUG MESSAAGE: "+myLogMessage);
+			logger.debug("DEBUG MESSAAGE: "+myLogMessage);
+		}
+		
+		if(logger.isInfoEnabled()) {
+			logger.info("INFO MESSAGE: "+myLogMessage);
+		}
+	}
+}

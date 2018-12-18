@@ -1,0 +1,95 @@
+package com.bk.abc;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+
+public class Main11 {
+	public static void main(String[] args) {
+		
+		//Read source file from user input
+		System.out.println("Source File:");
+		Scanner SourceScanner = new Scanner(System.in);
+		String SourceFilePath = SourceScanner.nextLine();
+		File sourceFile = new File(SourceFilePath);
+		
+		//Show file contents
+		System.out.println("File Contents:");
+		
+		Map<Integer, Students> nameMap = new HashMap<Integer, Students>();
+		FileReader fr = null;
+		BufferedReader br = null;
+		
+		try {
+			fr = new FileReader(sourceFile);
+			br = new BufferedReader(fr);
+			String line;
+			while ((line = br.readLine()) != null) {
+				String[] lines = line.split(",");
+				Students sts = new Students(Integer.parseInt(lines[0]), lines[1], lines[2], lines[3], lines[4]);
+				nameMap.put(sts.getNo(), sts);
+				System.out.println(line);
+			}
+			
+		} catch(FileNotFoundException fnfe) {
+			System.out.println(fnfe);
+		} catch(IOException ioe) {
+			System.out.println(ioe);
+		} finally {
+			try {
+				fr.close();
+				br.close();
+			} catch(IOException ioe1) {
+				
+			}
+			
+		}
+		
+		//Read content in collection
+		Collection<Students> Students = nameMap.values();
+		List list = new ArrayList(Students);
+		Scanner optionScanner= new Scanner(System.in);
+		int option = optionScanner.nextInt();
+		System.out.println("Sort By:");
+		
+		if(option == 1) {
+			Collections.sort(list,new StudentCompare());
+		} else if(option == 2) {
+			Collections.sort(list,new FirstCompare());
+		} else if(option == 3) {
+			Collections.sort(list,new NoCompare());
+		} else {
+			Collections.sort(list,new StudentCompare());
+		}
+		
+		try (FileWriter fileWriter = new FileWriter(targetFilePath)){
+			for (Iterator<Students> it = list.iterator(); it.hasNext();)
+			{
+				Students sts = (Students)it.next();
+				System.out.println("Roll Number: "+sts.getNo());
+				System.out.println("First Name: "+sts.getFirst());
+				System.out.println("Last Name: "+sts.getLast());
+				System.out.println("Email: "+sts.getEmail());
+				System.out.println("Date of Birth: "+sts.getDob());
+				
+				fileWriter.write(sts.getNo() + ";"+sts.getFirst() + ";"+sts.getLast() + ";"+sts.getEmail() + ";"+sts.getDob()+"\n");
+				fileWriter.flush();
+			}
+		} catch (Exception e){
+			System.out.println(e);
+		}
+
+	}
+	}
+}

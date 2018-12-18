@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;bankmandiri&apos; to &apos;logger&apos;&#x0A;- Original project: &apos;logging&apos;&#x0A;- Original element: &apos;logging/src/bankmandiri&apos;&#x0A;- Renamed element: &apos;logging/src/logger&apos;&#x0A;- Update references to refactored element&#x0A;- Update fully qualified names in &apos;*&apos; files&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;bankmandiri&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;bankmandiri" name="logger" patterns="*" qualified="true" references="true" stamp="1544674304308" textual="true" version="1.0"/>
+</session>

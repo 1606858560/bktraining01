@@ -1,0 +1,5 @@
+package softwareag.mini.project.model;
+
+public class Category {
+
+}
